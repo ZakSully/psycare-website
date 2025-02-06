@@ -4,8 +4,8 @@
   "description": "PsyCare - Behavioral Health Technology & Staffing Solutions",
   "scripts": {
     "start": "serve dist",
-    "dev": "parcel src/*.html",
-    "build": "parcel build src/*.html --public-url ./",
+    "dev": "parcel *.html",
+    "build": "parcel build *.html --dist-dir dist",
     "clean": "rm -rf dist/*",
     "lint": "eslint src/js/**/*.js",
     "lint:fix": "eslint src/js/**/*.js --fix",
