@@ -3,10 +3,10 @@
   "version": "1.0.0",
   "description": "PsyCare - Behavioral Health Technology & Staffing Solutions",
   "scripts": {
-    "start": "serve .",
+    "start": "serve public",
     "dev": "parcel *.html",
-    "build": "parcel build ./*.html --dist-dir public --public-url ./",
-    "clean": "rm -rf public/*",
+    "build": "rm -rf public && parcel build *.html --no-cache --no-source-maps --dist-dir public",
+    "clean": "rm -rf public/* .parcel-cache",
     "lint": "eslint src/js/**/*.js",
     "lint:fix": "eslint src/js/**/*.js --fix",
     "stylelint": "stylelint src/css/**/*.css",

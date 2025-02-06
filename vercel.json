@@ -2,21 +2,6 @@
   "version": 2,
   "buildCommand": "npm run build",
   "outputDirectory": "public",
-  "installCommand": "npm install",
-  "builds": [
-    {
-      "src": "package.json",
-      "use": "@vercel/static-build",
-      "config": {
-        "distDir": "public",
-        "zeroConfig": true
-      }
-    }
-  ],
-  "routes": [
-    {
-      "src": "/(.*)",
-      "dest": "/$1"
-    }
-  ]
+  "public": true,
+  "cleanUrls": true
 } 
