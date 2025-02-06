@@ -172,3 +172,126 @@
     color: var(--white);
     border: none;
 }
+
+/* Mobile Menu Styles - Only visible on small screens */
+.mobile-toggle {
+    display: none;
+    background: none;
+    border: none;
+    padding: 0.5rem;
+    cursor: pointer;
+    position: relative;
+    z-index: 1001;
+}
+
+.mobile-toggle span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: var(--white);
+    margin: 4px 0;
+    transition: all 0.3s ease;
+}
+
+.mobile-nav {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--primary-dark);
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.mobile-nav-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    gap: 2rem;
+    padding: 2rem;
+}
+
+.mobile-link {
+    color: var(--white);
+    font-size: 1.25rem;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.mobile-link:hover {
+    color: var(--accent);
+}
+
+.mobile-link.highlight {
+    background: var(--accent);
+    color: var(--white);
+    padding: 0.75rem 1.5rem;
+    border-radius: var(--radius-full);
+}
+
+/* Mobile Responsive Styles */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+
+    .nav-right .nav-link,
+    .nav-right .btn-primary {
+        display: none;
+    }
+
+    .mobile-toggle {
+        display: block;
+    }
+
+    .mobile-nav {
+        display: block;
+    }
+
+    /* Show mobile menu when active */
+    .navbar.mobile-active .mobile-nav {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    /* Animate hamburger to X */
+    .navbar.mobile-active .mobile-toggle span:first-child {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .navbar.mobile-active .mobile-toggle span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .navbar.mobile-active .mobile-toggle span:last-child {
+        transform: rotate(-45deg) translate(5px, -5px);
+    }
+
+    /* Adjust logo size for mobile */
+    .logo img {
+        height: 24px;
+    }
+
+    /* Adjust container padding */
+    .nav-container {
+        padding: 0 var(--spacing-md);
+    }
+}
+
+/* Additional mobile optimizations */
+@media (max-width: 480px) {
+    .logo img {
+        height: 20px;
+    }
+
+    .mobile-link {
+        font-size: 1.125rem;
+    }
+}

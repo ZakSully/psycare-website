@@ -1,11 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     const navbar = document.querySelector('.navbar');
-    const mobileMenu = document.querySelector('.mobile-menu');
-    const mobileMenuOverlay = document.querySelector('.mobile-menu-overlay');
-
+    const mobileToggle = document.querySelector('.mobile-toggle');
     
-    navbar.querySelector('.nav-right').prepend(menuToggle);
-
     // Handle scroll
     window.addEventListener('scroll', () => {
         if (window.scrollY > 50) {
@@ -16,24 +12,28 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Mobile menu toggle
-    menuToggle.addEventListener('click', () => {
-        mobileMenu.classList.toggle('active');
-        mobileMenuOverlay.classList.toggle('active');
-        document.body.classList.toggle('menu-open');
-    });
-
-    mobileMenuOverlay.addEventListener('click', () => {
-        mobileMenu.classList.remove('active');
-        mobileMenuOverlay.classList.remove('active');
-        document.body.classList.remove('menu-open');
-    });
-
-    // Close mobile menu on link click
-    mobileMenu.querySelectorAll('a').forEach(link => {
-        link.addEventListener('click', () => {
-            mobileMenu.classList.remove('active');
-            mobileMenuOverlay.classList.remove('active');
-            document.body.classList.remove('menu-open');
+    if (mobileToggle) {
+        mobileToggle.addEventListener('click', () => {
+            navbar.classList.toggle('mobile-active');
+            document.body.style.overflow = navbar.classList.contains('mobile-active') ? 'hidden' : '';
         });
-    });
+
+        // Close mobile menu when clicking links
+        document.querySelectorAll('.mobile-link').forEach(link => {
+            link.addEventListener('click', () => {
+                navbar.classList.remove('mobile-active');
+                document.body.style.overflow = '';
+            });
+        });
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (navbar.classList.contains('mobile-active') && 
+                !e.target.closest('.mobile-nav') && 
+                !e.target.closest('.mobile-toggle')) {
+                navbar.classList.remove('mobile-active');
+                document.body.style.overflow = '';
+            }
+        });
+    }
 }); 
