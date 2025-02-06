@@ -5,7 +5,7 @@
   "scripts": {
     "start": "serve .",
     "dev": "parcel *.html",
-    "build": "parcel build *.html --dist-dir public --public-url ./",
+    "build": "parcel build ./*.html --dist-dir public --public-url ./",
     "clean": "rm -rf public/*",
     "lint": "eslint src/js/**/*.js",
     "lint:fix": "eslint src/js/**/*.js --fix",
