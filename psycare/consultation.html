@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Schedule a Consultation - PsyCare</title>
+    <link rel="icon" type="image/x-icon" href="assets/favicon/favicon.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/consultation.css">
+    <script src="js/main.js" defer></script>
+    <script src="js/consultation.js" defer></script>
+    <!-- Add Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Calendly integration -->
+    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+    <style>
+        .gradient-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                300deg,
+                #0B4B3F,
+                #34D399,
+                #6EE7B7,
+                #64A6AC,
+                #0B4B3F
+            );
+            background-size: 240% 240%;
+            animation: gradient-animation 20s ease infinite;
+            z-index: -1;
+        }
+
+        @keyframes gradient-animation {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Updated navbar styles */
+        .navbar {
+            position: absolute;
+            width: 100%;
+            background: transparent;
+            padding: 1.5rem 0;
+            z-index: 1000;
+        }
+
+        .navbar .nav-link {
+            color: rgba(255, 255, 255, 0.9);
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .navbar .nav-link:hover {
+            color: white;
+        }
+
+        .navbar .logo img {
+            filter: brightness(0) invert(1);
+            height: 28px;
+        }
+
+        .navbar .btn-primary {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            color: white;
+            transition: all 0.3s ease;
+        }
+
+        .navbar .btn-primary:hover {
+            background: rgba(255, 255, 255, 0.25);
+            transform: translateY(-2px);
+        }
+
+        .consultation-page {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            padding-top: 0; /* Remove top padding */
+        }
+        
+        .consultation-header {
+            color: white;
+            padding: calc(var(--spacing-3xl) + 80px) 0 var(--spacing-2xl); /* Adjusted padding to account for navbar */
+            text-align: center;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            margin-bottom: 0; /* Remove margin */
+        }
+        
+        .consultation-header .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-xl);
+        }
+        
+        .consultation-header h1 {
+            font-size: 3.5rem;
+            margin-bottom: var(--spacing-xl);
+            background: linear-gradient(to right, #fff, rgba(255, 255, 255, 0.9));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 800;
+            line-height: 1.2;
+        }
+        
+        .consultation-header p {
+            font-size: 1.25rem;
+            max-width: 600px;
+            margin: 0 auto;
+            color: rgba(255, 255, 255, 0.9);
+            line-height: 1.6;
+            padding: 0 var(--spacing-md);
+        }
+
+        .calendly-container {
+            flex: 1;
+            width: 100%;
+            max-width: 1200px;
+            margin: var(--spacing-2xl) auto;
+            padding: var(--spacing-xl);
+            background: rgba(255, 255, 255, 0.97);
+            border-radius: var(--radius-lg);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .calendly-inline-widget {
+            position: relative;
+            min-width: 320px;
+            height: 750px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 1.5rem;
+            color: rgba(255, 255, 255, 0.9);
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(5px);
+            margin-top: auto;
+        }
+
+        @media (max-width: 768px) {
+            .consultation-header {
+                padding: calc(var(--spacing-2xl) + 80px) 0 var(--spacing-xl);
+            }
+            
+            .consultation-header h1 {
+                font-size: 2.5rem;
+                padding: 0 var(--spacing-md);
+            }
+
+            .consultation-header p {
+                font-size: 1.125rem;
+                padding: 0 var(--spacing-md);
+            }
+
+            .calendly-container {
+                margin: var(--spacing-xl) var(--spacing-md);
+                padding: var(--spacing-md);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .consultation-header h1 {
+                font-size: 2rem;
+            }
+
+            .consultation-header {
+                padding: calc(var(--spacing-xl) + 80px) 0 var(--spacing-lg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="gradient-background"></div>
+    
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="/" class="logo">
+                <img src="assets/images/psycare-logo.png" alt="PsyCare">
+            </a>
+            
+            <div class="nav-links">
+                <a href="/#software" class="nav-link">Software</a>
+                <a href="/#staffing" class="nav-link">Staffing</a>
+            </div>
+
+            <div class="nav-right">
+                <a href="/login.html" class="nav-link">Login</a>
+                <a href="/consultation.html" class="btn btn-primary btn-sm">Book a Demo</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="consultation-page">
+        <div class="consultation-header">
+            <div class="container">
+                <h1>Schedule Your Consultation</h1>
+                <p>Choose a time that works best for you to learn how PsyCare can transform your behavioral health practice.</p>
+            </div>
+        </div>
+
+        <!-- Calendly inline widget -->
+        <div class="calendly-container">
+            <div class="calendly-inline-widget" data-url="https://calendly.com/psycaremn-info/psycare-discovery-call" style="min-width:320px;height:750px;"></div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 PsyCare. All rights reserved.</p>
+    </footer>
+
+    <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+</body>
+</html> 

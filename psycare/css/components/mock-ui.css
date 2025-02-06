@@ -1,0 +1,472 @@
+/* Mock UI Container Group */
+.mock-ui-group {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    margin: 0 auto;
+    position: relative;
+    transform: translateX(-40px);
+}
+
+/* iPhone Mock UI */
+.mock-ui-iphone {
+    flex-shrink: 0;
+    width: 320px;
+    height: 680px;
+    background: var(--white);
+    border-radius: 40px;
+    position: relative;
+    box-shadow: 
+        0 20px 40px -12px rgba(0, 0, 0, 0.12),
+        0 0 0 1px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+    border: 12px solid var(--white);
+    transform: scale(0.85);
+    transform-origin: center right;
+    z-index: var(--z-elevate);
+}
+
+/* Desktop Mock UI */
+.mock-ui {
+    flex-shrink: 0;
+    width: 1000px;
+    height: 680px;
+    transform: scale(0.85);
+    transform-origin: center left;
+    z-index: var(--z-elevate);
+    background: var(--white);
+    border-radius: var(--radius-xl);
+    box-shadow: 
+        0 20px 40px -8px rgba(0, 0, 0, 0.12),
+        0 0 0 1px rgba(0, 0, 0, 0.04);
+    display: flex;
+    overflow: hidden;
+    position: relative;
+    font-family: var(--font-mono);
+}
+
+/* Notch Design */
+.mock-ui-iphone::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 35%;
+    height: 24px;
+    background: var(--white);
+    border-bottom-left-radius: 16px;
+    border-bottom-right-radius: 16px;
+    z-index: var(--z-elevate);
+}
+
+/* App Layout */
+.mock-ui-app {
+    height: 100%;
+    background: #f8fafc;
+    padding: 36px 16px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* App Header */
+.mock-ui-app-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 4px;
+}
+
+.mock-ui-app-title {
+    font-weight: 600;
+    font-size: 20px;
+    color: var(--text-dark);
+}
+
+.mock-ui-app-title img {
+    height: 24px;
+    width: auto;
+    object-fit: contain;
+    vertical-align: middle;
+}
+
+.mock-ui-app-time {
+    font-size: 14px;
+    color: #6B7280;
+}
+
+/* Clock Widget */
+.mock-ui-clock {
+    background: rgba(99, 102, 241, 0.1);
+    padding: 20px;
+    border-radius: var(--radius-lg);
+    text-align: center;
+}
+
+.mock-ui-clock-status {
+    color: #6366F1;
+    font-weight: 500;
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+
+.mock-ui-clock-time {
+    font-size: 32px;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: 16px;
+}
+
+.mock-ui-clock-button {
+    background: #6366F1;
+    color: var(--white);
+    border: none;
+    padding: 10px 20px;
+    border-radius: var(--radius-md);
+    font-weight: 500;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.mock-ui-clock-button:hover {
+    background: #4F46E5;
+    transform: translateY(-1px);
+}
+
+/* Schedule Section */
+.mock-ui-schedule {
+    background: var(--white);
+    border-radius: var(--radius-lg);
+    padding: 16px;
+    flex-grow: 1;
+    box-shadow: var(--shadow-sm);
+}
+
+.mock-ui-schedule-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.mock-ui-schedule-title {
+    font-weight: 600;
+    font-size: 14px;
+    color: var(--text-dark);
+}
+
+.mock-ui-schedule-date {
+    font-size: 12px;
+    color: #6B7280;
+}
+
+.mock-ui-schedule-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.mock-ui-schedule-item {
+    display: flex;
+    gap: 12px;
+    padding: 12px;
+    background: #F9FAFB;
+    border-radius: var(--radius-md);
+    transition: transform var(--transition-fast);
+}
+
+.mock-ui-schedule-item:hover {
+    transform: translateX(4px);
+    background: #F3F4F6;
+}
+
+.mock-ui-schedule-time {
+    font-weight: 500;
+    font-size: 12px;
+    color: #6366F1;
+    min-width: 60px;
+}
+
+.mock-ui-schedule-info {
+    flex-grow: 1;
+}
+
+.mock-ui-schedule-patient {
+    font-weight: 500;
+    font-size: 13px;
+    color: var(--text-dark);
+    margin-bottom: 2px;
+}
+
+.mock-ui-schedule-type {
+    font-size: 12px;
+    color: #6B7280;
+}
+
+/* Desktop UI Components */
+.mock-ui-sidebar {
+    width: 240px;
+    background: linear-gradient(180deg, #F9FAFB 0%, #F3F4F6 100%);
+    border-right: 1px solid rgba(0, 0, 0, 0.06);
+    padding: 1.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xl);
+}
+
+.mock-ui-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.mock-ui-logo img {
+    height: 28px;
+    width: auto;
+}
+
+.mock-ui-nav {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+}
+
+.mock-ui-nav-item {
+    color: #6B7280;
+    padding: 0.75rem 1rem;
+    border-radius: var(--radius-md);
+    font-size: 0.875rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    transition: all var(--transition-fast);
+}
+
+.mock-ui-nav-item.active {
+    background: #F3F4F6;
+    color: #6366F1;
+    font-weight: 600;
+}
+
+.mock-ui-nav-item:hover {
+    background: #F3F4F6;
+    color: #4F46E5;
+}
+
+/* Main Content Area */
+.mock-ui-main {
+    flex: 1;
+    background: var(--white);
+    padding: var(--spacing-xl);
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+}
+
+/* Mock UI Dashboard Components */
+.mock-ui-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--spacing-lg);
+}
+
+.mock-ui-welcome {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--text-dark);
+}
+
+.mock-ui-date {
+    color: var(--text-light);
+    font-size: 0.875rem;
+}
+
+.mock-ui-metrics {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-xl);
+}
+
+.mock-ui-metric {
+    background: var(--white);
+    padding: var(--spacing-lg);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+}
+
+.mock-ui-metric-value {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: var(--spacing-xs);
+}
+
+.mock-ui-metric-label {
+    font-size: 0.875rem;
+    color: var(--text-light);
+}
+
+.mock-ui-charts {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-lg);
+    margin-bottom: var(--spacing-xl);
+}
+
+.mock-ui-chart {
+    background: var(--white);
+    padding: var(--spacing-lg);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+}
+
+.mock-ui-chart-title {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: var(--spacing-md);
+}
+
+.mock-ui-chart-placeholder {
+    height: 200px;
+    background: linear-gradient(135deg, var(--accent-light) 0%, var(--background) 100%);
+    border-radius: var(--radius-md);
+}
+
+.mock-ui-activity {
+    background: var(--white);
+    padding: var(--spacing-lg);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+}
+
+.mock-ui-activity-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--spacing-md);
+}
+
+.mock-ui-activity-title {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-dark);
+}
+
+.mock-ui-activity-view {
+    font-size: 0.875rem;
+    color: var(--primary);
+    cursor: pointer;
+}
+
+.mock-ui-activity-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+}
+
+.mock-ui-activity-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--spacing-md);
+    background: var(--background);
+    border-radius: var(--radius-md);
+    transition: transform var(--transition-fast);
+}
+
+.mock-ui-activity-item:hover {
+    transform: translateX(4px);
+}
+
+.mock-ui-activity-name {
+    font-size: 0.875rem;
+    color: var(--text-dark);
+}
+
+.mock-ui-status {
+    font-size: 0.75rem;
+    font-weight: 500;
+    padding: 0.25rem 0.75rem;
+    border-radius: var(--radius-full);
+}
+
+.mock-ui-status-success {
+    background: #ECFDF5;
+    color: #065F46;
+}
+
+.mock-ui-status-pending {
+    background: #FEF3C7;
+    color: #92400E;
+}
+
+.mock-ui-activity-time {
+    font-size: 0.75rem;
+    color: var(--text-light);
+}
+
+/* Responsive Design */
+@media (max-width: 1280px) {
+    .mock-ui-group {
+        transform: translateX(-20px) scale(0.9);
+    }
+}
+
+@media (max-width: 1024px) {
+    .mock-ui-group {
+        transform: translateX(0) scale(0.8);
+        flex-direction: column;
+        align-items: center;
+        gap: 40px;
+    }
+
+    .mock-ui-iphone {
+        transform: scale(0.9);
+    }
+
+    .mock-ui {
+        transform: scale(0.8);
+    }
+
+    .mock-ui-metrics {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .mock-ui-charts {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .mock-ui-group {
+        transform: translateX(0) scale(0.7);
+    }
+
+    .mock-ui-welcome {
+        font-size: 1.25rem;
+    }
+    
+    .mock-ui-metric-value {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .mock-ui-metrics {
+        grid-template-columns: 1fr;
+    }
+    
+    .mock-ui-activity-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--spacing-xs);
+    }
+}

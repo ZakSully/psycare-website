@@ -1,0 +1,24 @@
+:root {
+    /* Colors */
+    --primary-green: #0B4B3F;
+    --secondary-green: #45a049;
+    --background-cream: #FAF9F6;
+    --text-dark: #1A1A1A;
+    --text-light: #4A5568;
+    
+    /* Typography */
+    --font-heading: 'Frank Ruhl Libre', serif;
+    --font-body: system-ui, -apple-system, sans-serif;
+    
+    /* Spacing */
+    --section-padding: 8rem 2rem;
+    --container-max-width: 1400px;
+    
+    /* Transitions */
+    --transition-standard: all 0.3s ease;
+    
+    /* Shadows */
+    --shadow-sm: 0 2px 4px rgba(0,0,0,0.05);
+    --shadow-md: 0 4px 6px rgba(0,0,0,0.1);
+    --shadow-lg: 0 10px 15px rgba(0,0,0,0.1);
+} 

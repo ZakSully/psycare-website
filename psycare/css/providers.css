@@ -1,0 +1,379 @@
+/* Add these variables at the top of the file */
+:root {
+    --primary-green: #4CAF50;
+    --primary-dark: #1a365d;
+    --text-dark: #333333;
+    --text-body: #4a5568;
+    --background-light: #f8f9fa;
+}
+
+/* Navigation styles for non-home pages */
+.navbar {
+    background: #f8f9fa;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.navbar .logo img {
+    filter: none;
+}
+
+.navbar .nav-link {
+    color: #333;
+}
+
+.navbar .nav-link::after {
+    background-color: #333;
+}
+
+.navbar .btn-get-started {
+    color: white;
+    background: #4CAF50;
+    border: none;
+}
+
+.navbar .btn-get-started:hover {
+    background: #45a049;
+}
+
+/* Container */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+/* Hero Banner */
+.hero-banner {
+    position: relative;
+    min-height: 600px;
+    background: linear-gradient(135deg, var(--primary-green) 0%, #45a049 100%);
+    display: flex;
+    align-items: center;
+    padding: 120px 2rem 4rem;
+    overflow: visible;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    color: white;
+}
+
+.hero-content h1 {
+    font-family: 'Outfit', sans-serif;
+    font-size: 3.5rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+}
+
+.hero-subtitle {
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+}
+
+.gradient-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, 
+        rgba(76, 175, 80, 0.9) 0%, 
+        rgba(69, 160, 73, 0.8) 100%
+    );
+    z-index: 1;
+}
+
+.cta-button {
+    display: inline-block;
+    background: #4CAF50;
+    color: white;
+    padding: 1rem 2.5rem;
+    border-radius: 30px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background: #45a049;
+    transform: translateY(-2px);
+}
+
+/* What We Do Section */
+.what-we-do {
+    padding: 6rem 0;
+    background: white;
+}
+
+.content-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.image-column img {
+    width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+
+.text-column h2 {
+    font-family: 'Outfit', sans-serif;
+    font-size: 2.5rem;
+    color: var(--text-dark);
+    margin-bottom: 1.5rem;
+}
+
+.text-column p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #4a5568;
+    margin-bottom: 2rem;
+}
+
+.feature-list {
+    list-style: none;
+    padding: 0;
+}
+
+.feature-list li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+    color: #2d3748;
+}
+
+.feature-list .icon {
+    width: 24px;
+    height: 24px;
+    margin-right: 1rem;
+    color: var(--primary-green);
+}
+
+/* How We Help Section */
+.how-we-help {
+    padding: 6rem 0;
+    background: #f8f9fa;
+}
+
+.how-we-help h2 {
+    text-align: center;
+    font-family: 'Outfit', sans-serif;
+    font-size: 2.5rem;
+    color: var(--text-dark);
+    margin-bottom: 3rem;
+}
+
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.solution-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.solution-card:hover {
+    transform: translateY(-5px);
+}
+
+.card-icon {
+    width: 48px;
+    height: 48px;
+    margin-bottom: 1.5rem;
+    color: var(--primary-green);
+}
+
+.solution-card h3 {
+    font-family: 'Outfit', sans-serif;
+    font-size: 1.5rem;
+    color: var(--text-dark);
+    margin-bottom: 1rem;
+}
+
+.solution-card p {
+    color: #4a5568;
+    line-height: 1.6;
+}
+
+/* Why Choose Us Section */
+.why-choose-us {
+    padding: 6rem 0;
+    background: white;
+}
+
+.content-split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.benefits-list {
+    list-style: none;
+    padding: 0;
+}
+
+.benefits-list li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+    color: #2d3748;
+}
+
+.benefits-list .icon {
+    width: 24px;
+    height: 24px;
+    margin-right: 1rem;
+    color: var(--primary-green);
+}
+
+.image-content img {
+    width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+
+/* CTA Section */
+.cta-section {
+    padding: 6rem 0;
+    background: linear-gradient(135deg, var(--primary-green) 0%, #45a049 100%);
+    text-align: center;
+    color: white;
+}
+
+.cta-section h2 {
+    font-family: 'Outfit', sans-serif;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.cta-section p {
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .content-grid,
+    .content-split {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .cards-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .hero-content h1 {
+        font-size: 3rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .cards-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.1rem;
+    }
+
+    .what-we-do,
+    .how-we-help,
+    .why-choose-us,
+    .cta-section {
+        padding: 4rem 0;
+    }
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hero-content,
+.content-grid,
+.solution-card,
+.content-split {
+    animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.solution-card:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.solution-card:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+/* Add/modify these styles */
+
+/* Ensure the page allows full scrolling */
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+main {
+    flex: 1 0 auto;
+    overflow: visible;
+    position: relative;
+    z-index: 1;
+}
+
+/* Update footer styles */
+.footer {
+    flex-shrink: 0;
+    position: relative;
+    width: 100%;
+    z-index: 1;
+    background: #1a1a1a; /* or whatever your footer background color is */
+}
+
+/* Remove any conflicting styles */
+.mobile-menu,
+.mobile-menu-overlay {
+    z-index: 100;
+}
+
+/* Ensure proper section spacing */
+.cta-section {
+    margin-bottom: 0;
+    padding-bottom: 6rem;
+}
+
+/* Clear any floating elements */
+.footer-content {
+    clear: both;
+} 

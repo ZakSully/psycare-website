@@ -1,0 +1,434 @@
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hero-content {
+    animation: fadeIn 1s ease-out;
+}
+
+.gradient-shape {
+    --float-x: 0px;
+    --float-y: 0px;
+    --float-x2: 0px;
+    --float-y2: 0px;
+    animation: float var(--duration, 25s) cubic-bezier(0.4, 0, 0.2, 1) infinite;
+    will-change: transform;
+}
+
+@keyframes float {
+    0% {
+        transform: translate(0, 0) scale(1);
+    }
+    33% {
+        transform: translate(var(--float-x, 300px), var(--float-y, -200px)) scale(1.1);
+    }
+    66% {
+        transform: translate(var(--float-x2, -250px), var(--float-y2, 250px)) scale(0.9);
+    }
+    100% {
+        transform: translate(0, 0) scale(1);
+    }
+}
+
+.btn {
+    transition: transform 0.2s ease;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+}
+
+.email-form input:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px var(--primary-color);
+}
+
+/* Section animations */
+.fade-in {
+    animation: fadeIn 0.8s ease-out forwards;
+}
+
+.slide-in {
+    animation: slideIn 0.8s ease-out forwards;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(-100px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Card hover animations */
+.card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+/* Smooth transitions */
+.smooth-transition {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+
+
+/* Hover effects */
+.hover-lift {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-lift:hover {
+    transform: translateY(-4px) scale(1.01);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+/* Card glow effect */
+.card {
+    position: relative;
+    overflow: hidden;
+}
+
+.card::before {
+    content: '';
+    position: absolute;
+    top: var(--mouse-y, 0);
+    left: var(--mouse-x, 0);
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(
+        600px circle at var(--mouse-x, 0) var(--mouse-y, 0),
+        rgba(255, 255, 255, 0.1),
+        transparent 40%
+    );
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.card:hover::before {
+    opacity: 1;
+}
+
+/* Scroll animations */
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.6s ease-out;
+}
+
+.animate-on-scroll.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Stagger child animations */
+.stats-grid .animate-on-scroll:nth-child(1) { transition-delay: 0s; }
+.stats-grid .animate-on-scroll:nth-child(2) { transition-delay: 0.2s; }
+.stats-grid .animate-on-scroll:nth-child(3) { transition-delay: 0.4s; }
+
+/* Hero image animations */
+.hero-images.animate-on-scroll {
+    transform: translateX(20px);
+}
+
+.hero-images.animate-on-scroll.show {
+    transform: translateX(0);
+}
+
+/* Stat number animation */
+.stat-number {
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+
+/* Stagger animations */
+.stagger-fade-up > * {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.stagger-fade-up.in-view > * {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.stagger-fade-up.in-view > *:nth-child(1) { transition-delay: 0.1s; }
+.stagger-fade-up.in-view > *:nth-child(2) { transition-delay: 0.2s; }
+.stagger-fade-up.in-view > *:nth-child(3) { transition-delay: 0.3s; }
+
+/* Parallax effect */
+.parallax {
+    transform: translateY(0);
+    will-change: transform;
+}
+
+/* Text gradient animation */
+.text-gradient {
+    background: linear-gradient(
+        90deg,
+        var(--primary-green) 0%,
+        var(--dark-green) 50%,
+        var(--primary-green) 100%
+    );
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: textGradient 8s linear infinite;
+}
+
+@keyframes textGradient {
+    to {
+        background-position: 200% center;
+    }
+}
+
+/* Button hover effect */
+.btn-primary, .btn-secondary {
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-primary::after, .btn-secondary::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 120%;
+    height: 0;
+    padding-bottom: 120%;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    transform: translate(-50%, -50%) scale(0);
+    opacity: 0;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+.btn-primary:hover::after, .btn-secondary:hover::after {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translate(0, 0) scale(1);
+    }
+    33% {
+        transform: translate(var(--float-x, 300px), var(--float-y, -200px)) scale(1.1);
+    }
+    66% {
+        transform: translate(var(--float-x2, -250px), var(--float-y2, 250px)) scale(0.9);
+    }
+    100% {
+        transform: translate(0, 0) scale(1);
+    }
+}
+
+.gradient-shape {
+    --float-x: 0px;
+    --float-y: 0px;
+    --float-x2: 0px;
+    --float-y2: 0px;
+    animation: float var(--duration, 25s) cubic-bezier(0.4, 0, 0.2, 1) infinite;
+    will-change: transform;
+}
+
+/* Stripe-like wave animation */
+@keyframes wave {
+    0%, 100% {
+        transform: translateY(0) scale(1);
+    }
+    50% {
+        transform: translateY(-30px) scale(1.02);
+    }
+}
+
+.gradient-shapes {
+    animation: none;
+}
+
+@keyframes gradientPosition {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translate(0, 0) scale(1);
+    }
+    33% {
+        transform: translate(var(--float-x, 400px), var(--float-y, -200px)) scale(1.1);
+    }
+    66% {
+        transform: translate(var(--float-x2, -300px), var(--float-y2, 300px)) scale(0.9);
+    }
+}
+
+.gradient-shape {
+    --float-x: 0px;
+    --float-y: 0px;
+    --float-x2: 0px;
+    --float-y2: 0px;
+    animation: float var(--duration, 30s) cubic-bezier(0.4, 0, 0.2, 1) infinite;
+    will-change: transform;
+}
+
+@keyframes waveFloat {
+    0% {
+        transform: translate(0, 0) scale(1) rotate(0deg);
+    }
+    25% {
+        transform: translate(
+            calc(var(--wave-x) * 0.5),
+            calc(var(--wave-y) * 0.5)
+        ) scale(var(--wave-scale)) rotate(calc(var(--wave-rotate) * 0.5));
+    }
+    50% {
+        transform: translate(
+            var(--wave-x),
+            var(--wave-y)
+        ) scale(calc(2 - var(--wave-scale))) rotate(var(--wave-rotate));
+    }
+    75% {
+        transform: translate(
+            calc(var(--wave-x) * 0.5),
+            calc(var(--wave-y) * 0.5)
+        ) scale(var(--wave-scale)) rotate(calc(var(--wave-rotate) * 0.5));
+    }
+    100% {
+        transform: translate(0, 0) scale(1) rotate(0deg);
+    }
+}
+
+.gradient-shapes {
+    animation: none;
+    perspective: 1000px;
+    transform-style: preserve-3d;
+}
+
+.gradient-shape {
+    backface-visibility: hidden;
+}
+
+/* Benefit cards animation */
+.benefit-card {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.6s ease forwards;
+}
+
+.benefit-card:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.benefit-card:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Scroll Trigger Animations */
+.fade-up {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.fade-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.fade-in {
+    opacity: 0;
+    transition: opacity 0.6s ease;
+}
+
+.fade-in.visible {
+    opacity: 1;
+}
+
+/* Stagger children animations */
+.stagger-children > * {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.stagger-children.visible > * {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.stagger-children.visible > *:nth-child(1) { transition-delay: 0.1s; }
+.stagger-children.visible > *:nth-child(2) { transition-delay: 0.2s; }
+.stagger-children.visible > *:nth-child(3) { transition-delay: 0.3s; }
+
+/* Stats counter animation */
+@keyframes countUp {
+    from {
+        transform: translateY(10px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.stat-number.counting {
+    animation: countUp 1s ease forwards;
+}
+
+/* Line drawing animation */
+.line {
+    width: 0;
+    transition: width 1s ease;
+}
+
+.line.visible {
+    width: 200px;
+}
+
+/* Diamond fade animation */
+.diamond {
+    opacity: 0;
+    transform: rotate(45deg) scale(0);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.diamond.visible {
+    opacity: 1;
+    transform: rotate(45deg) scale(1);
+} 

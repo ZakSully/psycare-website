@@ -1,0 +1,48 @@
+{
+  "name": "psycare-website",
+  "version": "1.0.0",
+  "description": "PsyCare - Behavioral Health Technology & Staffing Solutions",
+  "scripts": {
+    "start": "serve dist",
+    "dev": "parcel src/*.html",
+    "build": "parcel build src/*.html --public-url ./",
+    "clean": "rm -rf dist/*",
+    "lint": "eslint src/js/**/*.js",
+    "lint:fix": "eslint src/js/**/*.js --fix",
+    "stylelint": "stylelint src/css/**/*.css",
+    "stylelint:fix": "stylelint src/css/**/*.css --fix",
+    "format": "prettier --write \"src/**/*.{js,css,html}\"",
+    "test": "jest",
+    "analyze": "source-map-explorer dist/**/*.js"
+  },
+  "dependencies": {
+    "core-js": "^3.35.1",
+    "intersection-observer": "^0.12.2"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.23.9",
+    "@babel/preset-env": "^7.23.9",
+    "@parcel/transformer-sass": "^2.11.0",
+    "autoprefixer": "^10.4.17",
+    "eslint": "^8.56.0",
+    "jest": "^29.7.0",
+    "parcel": "^2.11.0",
+    "postcss": "^8.4.33",
+    "prettier": "^3.2.4",
+    "serve": "^14.2.1",
+    "source-map-explorer": "^2.5.3",
+    "stylelint": "^16.2.0",
+    "stylelint-config-standard": "^36.0.0"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ],
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "license": "UNLICENSED",
+  "private": true
+} 
