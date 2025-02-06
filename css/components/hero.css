@@ -38,7 +38,7 @@
     z-index: var(--z-elevate);
     max-width: var(--container-2xl);
     margin: 0 auto;
-    padding: var(--spacing-3xl) var(--spacing-xl);
+    padding: calc(var(--spacing-3xl) + 4rem) var(--spacing-xl) var(--spacing-3xl);
 }
 
 .hero-content {
@@ -106,68 +106,73 @@
 @media (max-width: 768px) {
     .hero {
         min-height: auto;
-        padding-bottom: 4rem;
+        padding: 10rem 0 4rem;
     }
     
     .hero-container {
-        padding: var(--spacing-xl) var(--spacing-md);
+        padding: var(--spacing-2xl) var(--spacing-md);
     }
 
     .hero-content {
         grid-template-columns: 1fr;
         gap: var(--spacing-xl);
         text-align: center;
-        padding-top: 2rem;
     }
 
     .hero-left {
         margin: 0 auto;
-        padding: 0 var(--spacing-md);
+        padding: 0;
     }
 
     .hero-title {
-        font-size: 3rem;
+        font-size: 3.2rem;
         margin-bottom: var(--spacing-lg);
     }
 
     .hero-subtitle {
         font-size: 1.25rem;
         margin-bottom: var(--spacing-xl);
+        padding: 0 var(--spacing-md);
     }
     
     .hero-right {
-        margin-top: 2rem;
-        padding: 0 var(--spacing-sm);
+        margin: 0;
+        overflow: visible;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
-    
-    .mock-ui-group {
-        transform: scale(0.9);
-        margin: -2rem -1rem;
+
+    .cta-group {
+        width: 100%;
+        max-width: 300px;
+        margin: 0 auto;
     }
 }
 
 @media (max-width: 480px) {
     .hero {
-        padding-bottom: 3rem;
+        padding: 8rem 0 3rem;
     }
     
     .hero-container {
-        padding: var(--spacing-lg) var(--spacing-sm);
+        padding: var(--spacing-xl) var(--spacing-sm);
     }
 
     .hero-title {
-        font-size: 2.5rem;
-        margin-bottom: var(--spacing-md);
+        font-size: 2.8rem;
+        margin-bottom: var(--spacing-lg);
+        line-height: 1.2;
     }
 
     .hero-subtitle {
         font-size: 1.1rem;
-        margin-bottom: var(--spacing-lg);
+        margin-bottom: var(--spacing-xl);
+        padding: 0 var(--spacing-sm);
     }
     
-    .mock-ui-group {
-        transform: scale(0.8);
-        margin: -3rem -2rem;
+    .hero-right {
+        margin: 0;
     }
     
     .cta-group {
@@ -175,11 +180,14 @@
         flex-direction: column;
         align-items: center;
         gap: var(--spacing-md);
+        padding: 0 var(--spacing-md);
+        width: 100%;
+        max-width: 300px;
+        margin: 0 auto;
     }
     
     .btn {
         width: 100%;
-        max-width: 300px;
         justify-content: center;
     }
 }

@@ -383,14 +383,34 @@
 }
 
 @media (max-width: 768px) {
+    .footer-content {
+        padding: 0 var(--spacing-md);
+    }
+
     .footer-grid {
         grid-template-columns: 1fr;
         gap: var(--spacing-xl);
+        text-align: center;
+    }
+
+    .footer-brand {
+        align-items: center;
     }
 
     .footer-nav {
         grid-template-columns: 1fr;
-        gap: var(--spacing-lg);
+        gap: var(--spacing-xl);
+    }
+
+    .footer-nav-group {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-nav-group h4 {
+        text-align: center;
+        margin-bottom: var(--spacing-xl);
     }
 
     .footer-nav-group h4::after {
@@ -402,48 +422,111 @@
         text-align: center;
     }
 
+    .footer-nav-group ul li {
+        margin-bottom: var(--spacing-md);
+    }
+
+    .footer-nav-group ul a:hover {
+        transform: none;
+    }
+
     .footer-contact {
+        align-items: center;
         text-align: center;
+    }
+
+    .footer-contact h4 {
+        text-align: center;
+        margin-bottom: var(--spacing-xl);
+    }
+
+    .footer-contact h4::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .contact-info {
+        align-items: center;
     }
 
     .contact-item {
         justify-content: center;
+        text-align: center;
+        flex-direction: column;
+        gap: var(--spacing-sm);
     }
 
-    .live-chat-link {
-        justify-content: center;
+    .contact-item address {
+        text-align: center;
+    }
+
+    .newsletter-signup {
+        text-align: center;
+        max-width: 100%;
+        padding: 0 var(--spacing-md);
+    }
+
+    .signup-form {
+        flex-direction: column;
+        gap: var(--spacing-md);
+        max-width: 300px;
+        margin: 0 auto;
+    }
+
+    .signup-form input {
+        width: 100%;
+        text-align: center;
+    }
+
+    .signup-form button {
+        width: 100%;
     }
 
     .footer-bottom {
-        gap: var(--spacing-md);
+        flex-direction: column;
+        gap: var(--spacing-lg);
+        text-align: center;
+        padding-top: var(--spacing-xl);
     }
 
     .legal-links {
         flex-direction: column;
-        gap: var(--spacing-sm);
+        gap: var(--spacing-md);
     }
 
-    .separator {
+    .legal-links .separator {
         display: none;
     }
 
-    .compliance-badges {
-        flex-direction: column;
-        gap: var(--spacing-sm);
+    .social-links {
+        justify-content: center;
+        gap: var(--spacing-lg);
+    }
+
+    .copyright {
+        order: 3;
     }
 }
 
 @media (max-width: 480px) {
-    .signup-form {
-        flex-direction: column;
+    .footer {
+        padding: var(--spacing-2xl) 0 var(--spacing-lg);
     }
 
-    .signup-button {
-        width: 100%;
+    .footer-content {
+        padding: 0 var(--spacing-sm);
     }
 
-    .social-links {
-        flex-wrap: wrap;
-        justify-content: center;
+    .footer-grid {
+        gap: var(--spacing-lg);
+        margin-bottom: var(--spacing-2xl);
+    }
+
+    .contact-item {
+        font-size: 0.875rem;
+    }
+
+    .newsletter-signup h5 {
+        font-size: 0.9375rem;
     }
 }

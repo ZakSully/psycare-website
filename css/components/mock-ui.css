@@ -430,43 +430,50 @@
 
     .mock-ui-iphone {
         transform: scale(0.9);
+        transform-origin: center center;
     }
 
     .mock-ui {
         transform: scale(0.8);
-    }
-
-    .mock-ui-metrics {
-        grid-template-columns: repeat(2, 1fr);
-    }
-    
-    .mock-ui-charts {
-        grid-template-columns: 1fr;
+        transform-origin: center center;
+        margin-top: -60px;
     }
 }
 
 @media (max-width: 768px) {
     .mock-ui-group {
-        transform: translateX(0) scale(0.7);
+        transform: none;
+        flex-direction: column;
+        width: 100%;
+        overflow: visible;
+        padding: 0;
+        margin: 3rem auto 0;
+        position: relative;
+        display: flex;
+        align-items: center;
     }
 
-    .mock-ui-welcome {
-        font-size: 1.25rem;
+    .mock-ui {
+        display: none; /* Hide dashboard on mobile */
     }
-    
-    .mock-ui-metric-value {
-        font-size: 1.5rem;
+
+    .mock-ui-iphone {
+        transform: scale(0.8);
+        transform-origin: center top;
+        margin: 0 auto;
+        position: relative;
+        z-index: 2;
     }
 }
 
 @media (max-width: 480px) {
-    .mock-ui-metrics {
-        grid-template-columns: 1fr;
+    .mock-ui-group {
+        margin: 2rem auto 0;
     }
-    
-    .mock-ui-activity-item {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: var(--spacing-xs);
+
+    .mock-ui-iphone {
+        transform: scale(0.7);
+        transform-origin: center top;
+        margin: 0 auto;
     }
 }
